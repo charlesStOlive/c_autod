@@ -1,0 +1,47 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    sort_order:
+        label: waka.utils::lang.global.sort_order
+        invisible: true
+    action:
+        type: waka-btn-actions
+        icon: icon-wrench
+        clickable: false
+        searchable: false
+        sortable: false
+        width: 25px
+    reservation_icon:
+        label:  ""
+        type: partial
+        path: $/waka/crsm/models/lot/_reservation.htm
+        searchable: false
+        sortable: false
+    reservation:
+        label: waka.crsm::lang.lot.reservation
+        relation: contact
+        select: name
+    project:
+        label: waka.crsm::lang.project.name
+        relation: project
+        select: name
+    price:
+        label: waka.crsm::lang.lot.price
+        searchable: true
+    name:
+        label: waka.crsm::lang.lot.name
+        searchable: true
+    type_lot:
+        label: waka.crsm::lang.lot.type_lot
+        relation: type_lot
+        select: name
+    surface:
+        label: waka.crsm::lang.lot.surface
+    level:
+        label: waka.crsm::lang.lot.level
+    updated_at:
+        label: waka.utils::lang.global.updated_at
+        type: timetense
+    

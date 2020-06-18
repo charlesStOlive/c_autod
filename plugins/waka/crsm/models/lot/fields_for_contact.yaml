@@ -1,0 +1,57 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name@create:
+        label: waka.crsm::lang.lot.name
+    
+    surface@create:
+        label: waka.crsm::lang.lot.surface
+        comment: waka.crsm::lang.lot.surface_com
+
+    type_lot@create:
+        label: waka.utils::lang.type_lot.name
+        place_holder: waka.utils::lang.type_lot_ph
+        type: relation
+        select: name
+
+    level@create:
+        label: waka.crsm::lang.lot.level
+        comment: waka.crsm::lang.lot.level_com
+tabs:
+    icons:
+        waka.crsm::lang.lot.description: icon-info-circle
+        waka.crsm::lang.lot.crea: icon-magic
+    fields: 
+        name@update:
+            tab: waka.crsm::lang.lot.description
+            label: waka.crsm::lang.lot.name
+            span: auto
+        
+        surface@update:
+            tab: waka.crsm::lang.lot.description
+            label: waka.crsm::lang.lot.surface
+            comment: waka.crsm::lang.lot.surface_com
+            span: auto
+        price@update:
+            tab: waka.crsm::lang.lot.description
+            label: waka.crsm::lang.lot.price
+            span: auto
+        type_lot@update:
+            tab: waka.crsm::lang.lot.description
+            label: waka.utils::lang.type_lot.name
+            type: relation
+            select: name
+            span: auto
+        description@update:
+            label: waka.crsm::lang.lot.description
+            type: textarea
+            tab: waka.crsm::lang.lot.description
+            span: full
+        description_html@update:
+            label: waka.crsm::lang.lot.description_html
+            type: richeditor
+            tab: waka.crsm::lang.lot.description
+            span: full
+    

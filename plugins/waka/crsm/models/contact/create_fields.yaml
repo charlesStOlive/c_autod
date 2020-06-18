@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: waka.crsm::lang.contact.name
+        span: auto
+
+    surname:
+        label: waka.crsm::lang.contact.surname
+        span: auto
+
+    email:
+        label: waka.crsm::lang.contact.email
+        span: auto

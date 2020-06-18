@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    projects:
+        label: Filtrer par secteur
+        conditions: project_id in (:filtered)
+        modelClass: Waka\Crsm\Models\Project
+        nameFrom: name
+    reservations:
+        label: Réservation
+        scope: reservationFilter
+        type: switch
+        default: 0

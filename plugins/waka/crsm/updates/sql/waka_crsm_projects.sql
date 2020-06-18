@@ -1,0 +1,1 @@
+INSERT INTO `waka_crsm_projects` (`id`, `name`, `slug`, `cp_id`, `project_state_id`, `content`, `content_word`, `primary_color`, `secondary_color`, `closed_at`, `closed_presvision_at`, `deleted_at`, `created_at`, `updated_at`) VALUES (1, 'Premier projet', 'test', 1, 1, '', '', NULL, NULL, NULL, NULL, NULL, '2020-2-26 13:57:35', '2020-2-26 14:03:41');

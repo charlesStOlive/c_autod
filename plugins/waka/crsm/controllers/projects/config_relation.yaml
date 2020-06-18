@@ -1,0 +1,16 @@
+lots:
+    label: waka.crsm::lang.project.lot
+    view:
+        list: $/waka/crsm/models/lot/columns_for_project.yaml
+        defaultSort: 
+            column: sort_order
+            direction: asc
+        toolbarButtons: create|delete|reorder
+        recordUrl: waka/crsm/lots/update/:id
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        form: $/waka/crsm/models/lot/fields_for_project.yaml
+        scope: notClosed
+    # pivot:
+    #     form: $/waka/crsm/models/mission/fields_pivot.yaml

@@ -1,0 +1,8 @@
+contact:
+    label: waka.crsm::lang.lot.contact
+    view:
+        form: $/waka/crsm/models/contact/fields_for_lot.yaml
+        toolbarButtons: create|link|unlink
+    manage:
+        form: $/waka/crsm/models/contact/fields_for_lot.yaml
+        list: $/waka/crsm/models/contact/columns_for_lot.yaml

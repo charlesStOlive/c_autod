@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+
+
+
+fields:
+    name:
+        label: waka.crsm::lang.contact.name
+        tab: waka.crsm::lang.client.details
+        span: auto
+
+    surname:
+        label: waka.crsm::lang.contact.surname
+        tab: waka.crsm::lang.client.details
+        span: auto
+
+    email:
+        label: waka.crsm::lang.contact.email
+        tab: waka.crsm::lang.client.details
+
+        # client:
+        #     type: relation
+        #     label: waka.crsm::lang.client.name
+        #     placeholder: waka.crsm::lang.contact.client_placeholder
+        #     tab: waka.crsm::lang.client.details 
+        
+        # montages_list:
+        #     tab: waka.crsm::lang.contact.crea
+        #     label: waka.crsm::lang.client.montage_list
+        #     type: montagelist
+        #     span: full
+
+        # profil:
+        #     tab: waka.crsm::lang.contact.crea
+        #     label: waka.crsm::lang.contact.profil
+        #     type: fileupload
+        #     mode: image
+        #     thumbOptions:
+        #         mode: fit
+        #     imageWidth: 300
+        #     imageHeight: 150
+        #     span: auto
+
+    
+        

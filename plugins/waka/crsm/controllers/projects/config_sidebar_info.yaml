@@ -1,0 +1,13 @@
+model: project
+
+fields:
+    name:
+        value: name
+        type: label
+        cssClass: sb-h1 br-p
+    state:
+        value: project_state.name
+        label: Etat du projet
+    resa:
+        value: reservationsLots
+        label: NB reservations/Lots

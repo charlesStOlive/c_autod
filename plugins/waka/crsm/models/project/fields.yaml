@@ -1,0 +1,234 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name@create:
+        label: waka.crsm::lang.project.name
+        span: auto
+    slug@create:
+        label: waka.utils::lang.global.slug
+        preset: name
+        span: auto
+
+    cp@create:
+        label: waka.crsm::lang.project.cp
+        type: relation
+        placeholder: waka.crsm::lang.project.cp_placeholder
+        select: first_name
+        span: full
+    
+    project_state:
+        label: waka.crsm::lang.project.project_state
+        type: balloon-selector
+        options: listProjectState
+        span: full
+tabs:
+    icons:
+        waka.crsm::lang.project.description_tab: icon-info-circle
+        waka.crsm::lang.project.lots: icon-bed
+        waka.crsm::lang.project.crea: icon-magic
+    fields: 
+        lots@update:
+            tab: waka.crsm::lang.project.lots
+            type: partial
+            path: field_lots
+            tab: waka.crsm::lang.project.description_tab
+
+        name@update:
+            tab: waka.crsm::lang.project.description_tab
+            label: waka.crsm::lang.project.name
+            span: auto
+        slug@update:
+            tab: waka.crsm::lang.project.description_tab
+            label: waka.utils::lang.global.slug
+            preset: name
+            span: auto
+            readOnly: true
+        cp@update:
+            tab: waka.crsm::lang.project.description_tab
+            label: waka.crsm::lang.project.cp
+            type: relation
+            placeholder: waka.crsm::lang.project.cp_placeholder
+            select: first_name
+            span: full
+        description@update:
+            label: waka.crsm::lang.project.description
+            type: textarea
+            tab: waka.crsm::lang.project.description_tab
+        description_html@update:
+            label: waka.crsm::lang.project.description_html
+            type: richeditor
+            mode: split
+            tab: waka.crsm::lang.project.description_tab
+        departement:
+            label: waka.crsm::lang.project.departement
+            type: relation
+            select: name
+            tab: waka.crsm::lang.project.description_tab
+            span: auto
+        code_zip:
+            label: waka.crsm::lang.project.cp
+            tab: waka.crsm::lang.project.description_tab
+            span: auto
+        adresse:
+            label: waka.crsm::lang.project.adresse
+            tab: waka.crsm::lang.project.description_tab
+        ville:
+            label: waka.crsm::lang.project.ville
+            tab: waka.crsm::lang.project.description_tab
+            span: left
+        main_picture@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.main_picture
+            type: cloudifileupload
+            mode: image
+            imageWidth: 300
+            imageHeight: 150
+            span: auto
+        plan_1@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.plan_1
+            type: cloudifileupload
+            imageWidth: 300
+            imageHeight: 150
+            span: auto
+        picture_1@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.picture_1
+            type: cloudifileupload
+            imageWidth: 300
+            imageHeight: 150
+            span: auto
+        picture_2@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.picture_2
+            type: cloudifileupload
+            imageWidth: 300
+            imageHeight: 150
+            span: auto
+        primary_color:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.primary_color
+            type: colorpicker
+            span: auto
+        secondary_color:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.project.secondary_color
+            type: colorpicker
+            span: auto
+
+        
+
+
+        
+    #     client@create:
+    #         label: waka.crsm::lang.project.name
+    #         type: relation
+    #         placeholder: waka.crsm::lang.project.client_placeholder
+
+    #     contact@create:
+    #         label: waka.crsm::lang.project.contact
+    #         type: dropdown
+    #         placeholder: waka.crsm::lang.project.contact
+    #         options: listContacts
+    #         dependsOn: client
+        
+    #     cp@create:
+    #         label: waka.crsm::lang.project.cp
+    #         type: relation
+    #         placeholder: waka.crsm::lang.project.cp_placeholder
+    #         select: first_name
+        
+
+
+    #     description@create:
+    #         type: richeditor
+    #         tab: waka.crsm::lang.project.description
+
+    # tabs:
+    #     icons:
+    #         waka.crsm::lang.project.description: icon-briefcase
+    #         waka.crsm::lang.project.team: icon-users
+    #         waka.crsm::lang.project.brief: icon-info-circle
+    #         waka.crsm::lang.project.crea: icon-magic
+        
+    #     fields:
+    #         name@update:
+    #             label: waka.crsm::lang.project.name
+    #             tab: waka.crsm::lang.project.description
+
+    #         missions@update:
+    #             type: partial
+    #             path: field_missions
+    #             tab: waka.crsm::lang.project.description
+
+    #         description@update:
+    #             label: waka.crsm::lang.project.description
+    #             type: richeditor
+    #             tab: waka.crsm::lang.project.brief
+
+    #         picture_1@update:
+    #             tab: waka.crsm::lang.project.crea
+    #             label: waka.crsm::lang.client.picture
+    #             type: fileupload
+    #             mode: image
+    #             thumbOptions:
+    #                 mode: fit
+    #             imageWidth: 300
+    #             imageHeight: 150
+    #             span: storm
+    #             cssClass: col-sm-4 col-xs-12
+    #         picture_2@update:
+    #             tab: waka.crsm::lang.project.crea
+    #             label: waka.crsm::lang.client.picture
+    #             type: fileupload
+    #             mode: image
+    #             thumbOptions:
+    #                 mode: fit
+    #             imageWidth: 300
+    #             imageHeight: 150
+    #             span: storm
+    #             cssClass: col-sm-4 col-xs-12
+    #         picture_3@update:
+    #             tab: waka.crsm::lang.project.crea
+    #             label: waka.crsm::lang.client.picture
+    #             type: fileupload
+    #             mode: image
+    #             thumbOptions:
+    #                 mode: fit
+    #             imageWidth: 300
+    #             imageHeight: 150
+    #             span: storm
+    #             cssClass: col-sm-4 col-xs-12
+    #         montages_list@update:
+    #             tab: waka.crsm::lang.project.crea
+    #             label: waka.crsm::lang.client.montage_list
+    #             type: montagelist
+    #             span: full
+
+    #         client@update:
+    #             label: waka.crsm::lang.client.name
+    #             type: relation
+    #             placeholder: waka.crsm::lang.project.client_placeholder
+    #             tab: waka.crsm::lang.project.team
+
+    #         contact@update:
+    #             label: waka.crsm::lang.project.contact
+    #             type: dropdown
+    #             placeholder: waka.crsm::lang.project.contact
+    #             options: listContacts
+    #             tab: waka.crsm::lang.project.team
+            
+    #         cp@update:
+    #             label: waka.crsm::lang.project.cp
+    #             type: relation
+    #             placeholder: waka.crsm::lang.project.cp_placeholder
+    #             select: first_name
+    #             tab: waka.crsm::lang.project.team
+
+        
+        
+        
+
+ 

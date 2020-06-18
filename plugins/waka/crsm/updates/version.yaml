@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Start version of crsm'
+    - create_lots_table.php
+    - create_contacts_table.php
+    - create_project_states_table.php
+    - create_projects_table.php
+    - create_type_lots_table.php
+    - create_departements_table.php
+    - 'injection de base'
+    - seed_bases.php
+    - seed_projects.php
+1.0.2:
+    - 'add departement'
+    - create_departements_table.php
+1.0.3:
+    - 'add departement'
+    - create_projects_table_u103.php
+1.0.4:
+    - 'add prices'
+    - create_lots_table_u104.php

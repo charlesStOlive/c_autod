@@ -1,0 +1,15 @@
+lots:
+    label: waka.crsm::lang.project.lot
+    view:
+        list: $/waka/crsm/models/lot/columns_for_contact.yaml
+        defaultSort: 
+            column: created_at
+            direction: asc
+        toolbarButtons: Add |remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        form: $/waka/crsm/models/lot/fields_for_contact.yaml
+        scope: notClosed
+    # pivot:
+    #     form: $/waka/crsm/models/mission/fields_pivot.yaml
