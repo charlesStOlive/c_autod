@@ -1,0 +1,253 @@
+text:
+    name: waka.wcms::lang.repeater.text.name
+    description: waka.wcms::lang.repeater.text.description
+    icon: icon-file-text-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.text.name
+            comment: waka.wcms::lang.repeater.text.description
+        title:
+            label: waka.wcms::lang.repeater.text.title
+            size: tiny
+        text:
+            label: waka.wcms::lang.repeater.text.text
+            type: richeditor
+            toolbarButtons: bold|italic
+            size: tiny
+            span: auto
+
+partial:
+    name: waka.wcms::lang.repeater.partial.name
+    description: waka.wcms::lang.repeater.partial.description
+    icon: icon-tags
+    fields:
+        partial: 
+            label: waka.wcms::lang.repeater.partial.partial
+
+
+text_image:
+    name: waka.wcms::lang.repeater.text_image.name
+    description: waka.wcms::lang.repeater.text_image.description
+    icon: icon-file-text-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.text_image.name
+            comment: waka.wcms::lang.repeater.text_image.description
+        title:
+            label: waka.wcms::lang.repeater.text_image.title
+        text:
+            label: waka.wcms::lang.repeater.text_image.text
+            type: richeditor
+            toolbarButtons: bold|italic
+            span: auto
+        image:
+            label: waka.wcms::lang.repeater.text_image.image
+            type: mediafinder
+            mode: image
+            imageHeight: 100
+            imageWidth: 300
+text_svg:
+    name: waka.wcms::lang.repeater.text_svg.name
+    description: waka.wcms::lang.repeater.text_svg.description
+    icon: icon-address-card-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.text_svg.name
+            comment: waka.wcms::lang.repeater.text_svg.description
+        title:
+            label: waka.wcms::lang.repeater.text_svg.title
+        text:
+            label: waka.wcms::lang.repeater.text_svg.text
+            type: richeditor
+            toolbarButtons: bold|italic
+            size: small
+        size_text:
+            label: waka.wcms::lang.repeater.text_svg.size_text
+            default: w-1/2
+            span: auto
+        size_svg:
+            label: waka.wcms::lang.repeater.text_svg.size_svg
+            default: w-1/2
+            span: auto
+        svg:
+            label: waka.wcms::lang.repeater.text_svg.svg
+        # type:
+        #     label: waka.wcms::lang.repeater.text_svg.disposition
+        #     type: checkboxList
+        #     options:
+        #         col: Colonne
+        #         raw: Ligne
+
+vimeo:
+    name: waka.wcms::lang.repeater.vimeo.name
+    description: waka.wcms::lang.repeater.vimeo.description
+    icon: icon-file-video-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.vimeo.name
+            comment: waka.wcms::lang.repeater.vimeo.description
+        title: 
+            label: waka.wcms::lang.repeater.vimeo.title
+        id: 
+            label: waka.wcms::lang.repeater.vimeo.id
+        # bg: 
+        #     label: waka.wcms::lang.repeater.vimeo.bg
+
+cloudi_video:
+    name: waka.wcms::lang.repeater.cloudi_video.name
+    description: waka.wcms::lang.repeater.cloudi_video.description
+    icon: icon-file-video-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.cloudi_video.name
+            comment: waka.wcms::lang.repeater.cloudi_video.description
+        title: 
+            label: waka.wcms::lang.repeater.cloudi_video.title
+        url: 
+            label: waka.wcms::lang.repeater.cloudi_video.id
+        # bg: 
+        #     label: waka.wcms::lang.repeater.vimeo.bg
+
+carousel:
+    name: waka.wcms::lang.repeater.carousel.name
+    description: waka.wcms::lang.repeater.carousel.description
+    icon: icon-file-text-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.carousel.name
+            comment: waka.wcms::lang.repeater.carousel.description
+        title:
+            label: waka.wcms::lang.repeater.carousel_text.title
+            span: auto
+        carousel:
+            type: repeater
+            prompt: waka.wcms::lang.repeater.carousel.prompt
+            form:
+                fields:
+                    text:
+                        label: waka.wcms::lang.repeater.carousel.text
+                    image:
+                        label: waka.wcms::lang.repeater.carousel.image
+                        type: mediafinder
+                        mode: image
+                        imageHeight: 100
+                        imageWidth: 300            
+carousel_text:
+    name: waka.wcms::lang.repeater.carousel_text.name
+    description: waka.wcms::lang.repeater.carousel_text.description
+    icon: icon-file-text-o
+    fields:
+        group_section: 
+            type: section
+            label: waka.wcms::lang.repeater.carousel_text.name
+            comment: waka.wcms::lang.repeater.carousel_text.description
+        carousel_left: 
+            label: waka.wcms::lang.repeater.carousel_text.carousel_left
+            type: checkbox
+            span: auto
+        show_button: 
+            label: waka.wcms::lang.repeater.carousel_text.hide_button
+            type: checkbox
+            span: auto
+        size_text:
+            label: waka.wcms::lang.repeater.carousel_text.size_text
+            default: w-1/2
+            span: auto
+        size_carousel:
+            label: waka.wcms::lang.repeater.carousel_text.size_carousel
+            default: w-1/2
+            span: auto
+        # set_image:
+        #     label: waka.wcms::lang.repeater.carousel_text.set_image
+        #     type: checkbox
+        #     default: false
+        title:
+            label: waka.wcms::lang.repeater.carousel_text.title
+            span: auto
+            # trigger:
+            #     action: hide
+            #     field: set_image
+            #     condition: checked
+        text:
+            label: waka.wcms::lang.repeater.carousel_text.title
+            type: richeditor
+            toolbarButtons: bold|italic
+            size: tiny
+            span: auto  
+            # trigger:
+            #     action: hide
+            #     field: set_image
+            #     condition: checked
+        # title_image:
+        #     label: waka.wcms::lang.repeater.carousel_text.title_image
+        #     span: auto
+        #     trigger:
+        #         action: show
+        #         field: set_image
+        #         condition: checked
+        # image_replace_text:
+        #     label: waka.wcms::lang.repeater.carousel_text.image_replace_text
+        #     type: mediafinder
+        #     mode: image
+        #     span: auto
+        #     imageHeight: 100
+        #     imageWidth: 100
+        #     trigger:
+        #         action: show
+        #         field: set_image
+        #         condition: checked
+
+
+        carousel:
+            type: repeater
+            prompt: waka.wcms::lang.repeater.carousel_text.prompt
+            form:
+                fields:
+                    text:
+                        label: waka.wcms::lang.repeater.carousel_text.text
+                        span: auto
+                    image:
+                        label: waka.wcms::lang.repeater.carousel_text.image
+                        type: mediafinder
+                        mode: image
+                        span: auto
+                        imageWidth: 150
+                        imageHeight: 100
+
+# carousel_image:
+#     name: waka.wcms::lang.repeater.carousel_image.name
+#     description: waka.wcms::lang.repeater.carousel_image.description
+#     icon: icon-file-text-o
+#     fields:
+#         carousel_left: 
+#             label: waka.wcms::lang.repeater.carousel_image.carousel_left
+#             type: checkbox
+#             span: auto
+#         show_button: 
+#             label: waka.wcms::lang.repeater.carousel_image.hide_button
+#             type: checkbox
+#             span: auto
+#         size_text:
+#             label: waka.wcms::lang.repeater.carousel_image.size_text
+#             default: w-1/2
+#         size_carousel:
+#             label: waka.wcms::lang.repeater.carousel_image.size_carousel
+#             default: w-1/2
+#         title:
+#             label: waka.wcms::lang.repeater.carousel_image.title
+#         text:
+#             label: waka.wcms::lang.repeater.carousel_image.title
+#             type: richeditor
+#             toolbarButtons: bold|italic
+#             span: auto  
+
+
+
+
+        

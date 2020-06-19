@@ -1,7 +1,20 @@
 /* Custom css should be typed here if needed */
   .gradient {
-    background: linear-gradient(90deg, #048B9A 0%, #20494F 100%);
+    background: linear-gradient(90deg, #002D93 0%, #00184E 100%);
   }
+  .gradient-alpha {
+    background: linear-gradient(90deg,  #002D93 0%, #00184E90 100%);
+  }
+  .bg-data {
+    background-size:contain;
+    background-repeat:repeat;
+    background-image:url('/themes/wakatailwind/assets/images/Data-Management@0,25x.jpg');
+  }
+  @media (min-width: 1024px) {
+    .bg-data {
+      background-image:url('/themes/wakatailwind/assets/images/Data-Management.jpg');
+    }
+}
   
 
   .btn {
@@ -17,6 +30,21 @@
     @apply text-white bg-secondary;
   }
   /**
+  *
+  **/
+  .btn-pm {
+    @apply p-2 my-1 mx-2
+  }
+  .btn-outline-solution {
+    @apply btn-pm bg-transparent border border-primary rounded flex
+  }
+  .btn-outline-solution-disabled {
+    @apply btn-pm bg-primary rounded flex
+  }
+  .btn-outline-solution:hover {
+    @apply bg-primary  border-transparent
+  }
+  /**
   * ANimation
   **/
   .animated_icon {
@@ -25,27 +53,3 @@
   .animated_icon:hover {
     @apply scale-105
   }
-  // .wk-fadeIn {
-  //   /** @apply fadeIn slower delay-1s; */
-  // }
-
-/* purgecss start ignore */
-
-/* external css: flickity.css */
-.flickity-page-dots {
-  position: absolute;
-  width: 100%;
-  bottom: 10px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
-}
-
-.stripe-loading-indicator .stripe,
-.stripe-loading-indicator .stripe-loaded {
-    background: var(--color-secondary)!important;
-}
-/* purgecss end ignore */
-

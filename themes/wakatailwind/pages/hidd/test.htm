@@ -1,0 +1,67 @@
+title = "Accueil"
+url = "/test"
+layout = "default"
+is_hidden = 0
+
+[contenteditor ceditor]
+[contenteditor ctitle]
+[contenteditor ceditor2]
+[contenteditor ceditor3]
+==
+<div class="pt-24">
+
+    <div class="container mx-auto flex flex-wrap items-center justify-center">
+        <!--Left Col-->
+        <div class="w-full md:w-1/2 px-2 text-center md:text-left">
+            <div class="c-rich-text">
+                <!--Ne pas oublier d'ajouter la classe c-rich-text pour tailwind-->
+                {% component 'ceditor' file="home/intro.htm" %}
+            </div>
+            <button class="modal-open btn btn-secondary mt-12 z-10">Prendre
+                contact</button>
+
+        </div>
+        <!--Right Col-->
+        <div class="md:w-1/2 py-6 text-center">
+            {% partial 'svgs/clouddocs' %}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% partial 'site/separator' %}
+
+
+
+<section class="bg-white border-b py-8">
+    <div class="container mx-auto m-8">
+        <h2 class="c-h2 w-full px-2 my-2 text-center text-mydark">
+            {% component 'ctitle' file="home/c1_title.htm" fixture="span" %}</h2>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto bg-secondary w-64 my-0 py-0"></div>
+        </div>
+
+        <div class="container flex flex-wrap items-center justify-center">
+            <div class="w-full md:w-1/2 p-2">
+                <div class="text-mydark c-rich-text">
+                    {% component 'ceditor2' file="home/c1_a.htm" %}
+                </div>
+            </div>
+
+            <div id="trigger1" class="w-full md:w-1/2 p-2 h-quarterscreen">
+                {% partial 'svgs/undraw_Organizing_projects_0p9a' %}
+
+            </div>
+            <div class="hidden md:block w-full md:w-1/2 p-2 h-quarterscreen">
+                {% partial 'svgs/some_apps' %}
+            </div>
+            <div class="w-full md:w-1/2 p-2">
+                <div class="text-mydark c-rich-text">
+                    {% component 'ceditor3' file="home/c1_b.htm" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

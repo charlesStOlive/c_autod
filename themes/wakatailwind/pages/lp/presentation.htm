@@ -1,0 +1,206 @@
+title = "Presentation"
+url = "/lp/presentation/:key"
+layout = "nohader_white"
+is_hidden = 0
+
+[contenteditor ctitle]
+
+[contenteditor ceditor1]
+
+[contenteditor ceditor2]
+
+[contenteditor ceditor3]
+
+[contenteditor ceditor1c]
+==
+<?php
+use Waka\Lp\Models\SourceLog;
+function onStart()
+{
+    $key = $this->param('key');
+    $source = SourceLog::where('key',$key )->first();
+    if(!$source) {
+        return Redirect::to('/lp/bad_cod');
+    }
+    if(!$source->valide) {
+        return Redirect::to('/lp/deleted_cod');
+    }
+    $contact =  $source->send_targeteable;
+    $this['contact'] = $contact;
+    $this['color'] = $contact->client->primary_color;
+}
+//http://notilac.test/lp/presentation/5eb17da693421ya4gNgpF
+?>
+==
+{##}
+<div class="">
+
+    <div class="container mx-auto flex flex-wrap items-center justify-center">
+        <!--Left Col-->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="c-h1 py-12">
+                <!--Ne pas oublier d'ajouter la classe c-rich-text pour tailwind-->
+                Bonjour {{contact.name}} {{contact.surname}},
+            </div>
+            <div class="">
+                <!--Ne pas oublier d'ajouter la classe c-rich-text pour tailwind-->
+                <p>Je vous présente Notilac, un ensemble de service et APP qui permettent de publier des documents
+                    Words, PDF, des apps ou encore des pages web à partir de vos données.
+                </p>
+            </div>
+
+            <button class="hidden md:block modal-open text-white btn mt-12 z-10"
+                style="background-color:{{color}}">Prendre
+                contact</button>
+
+        </div>
+        <!--Right Col-->
+        <div class="w-full md:w-1/2  text-center">
+            {% partial 'svgs/home_final' color_s=color color_p="#CCCCCC" image=contact.client.logo.thumb(150, 150) %}
+            <button class="md:hidden block m-auto modal-open btn btn-secondary z-10">Prendre
+                contact</button>
+        </div>
+
+
+    </div>
+    {% set url_img = contact.client |getCloudiMontageUrl('image_offre', 1600,1200,'jpg', 'crop', 'east') %}
+    <div class="hidden md:block bg-fixed bg-img" style="
+    background-size:cover; background-image:url('{{url_img}}')" ;>
+        <div>{% partial 'site/separator' reverse='true' %}
+        </div>
+        <div class="flex justify-left ">
+            <h2 class="mb-32 c-h1 pl-2">
+                {% component 'ctitle' file="home/c2_title.htm" fixture="span" %}</h2>
+        </div>
+        {% partial 'site/separator' %}
+    </div>
+    {% set url_img = contact.client |getCloudiMontageUrl('image_offre', 600,900,'jpg', 'crop', 'east') %}
+    <div class="block md:hidden bg-fixed bg-img" style="
+    background-size:cover; background-image:url('{{url_img}}')" ;>
+        <div>{% partial 'site/separator' reverse='true' %}
+        </div>
+        <div class="flex justify-left ">
+            <h2 class="mb-32 c-h1 pl-2">
+        </div>
+        {% partial 'site/separator' %}
+    </div>
+    <section class="bg-white text-mydark pt-8">
+        <div class="container mx-auto m-8">
+            <h2 class="c-h2 w-full px-2 my-2 text-center text-mydark">
+                Deux démos</h2>
+            <div class="h-1 mx-auto bg-secondary w-64 mt-0"></div>
+            <div class="container flex flex-wrap justify-center">
+                <div class="w-full md:w-1/2 p-2 text-center">
+                    <div class="text-mydark c-rich-text">
+                        <h3>Communication et marketing</h3>
+                        <p>Cette démonstration permet à une société fictive, dans le secteur immobilier, de générer des
+                            documents, des offres, des documents de suivi de projets.
+                        </p>
+                        <button onclick="location.href='https://immob.notilac.fr'"
+                            class="hover:scale-105 text-white mx-auto lg:mx-0 btn"
+                            style="background-color:{{color}}">Accès
+                            IMMOB</button>
+                        <p class="text-xs">Vous devez avoir un identifiant et un mot de passe de test pour accéder à la
+                            démo</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 p-2 text-center">
+                    <div class="text-mydark c-rich-text">
+                        <h3>Performance commercial</h3>
+                        <p>Cette démonstration permet à une société fictive d'analyser ses 300 000
+                            Ventes réparties sur 8 000 clients, 10 commerciaux et une dizaine de gammes.
+                        </p>
+                        <button onclick="location.href='https://rapid.notilac.fr'"
+                            class="hover:scale-105 text-white mx-auto lg:mx-0 btn"
+                            style="background-color:{{color}}">Accès
+                            RAPID</button>
+                        <p class="text-xs">Vous devez avoir un identifiant et un mot de passe de test pour accéder à la
+                            démo</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="bg-white border-b py-8">
+        <div class="container mx-auto m-8">
+            <h2 class="c-h2 w-full px-2 my-2 text-center text-mydark">
+                {% component 'ctitle' file="home/c1_title.htm" fixture="span" %}</h2>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto bg-secondary w-64 mt-0"></div>
+                <div class="text-mydark c-rich-text py-4 text-center">
+                    {% component 'ceditor1' file="home/c1_i.htm"  %}
+                </div>
+            </div>
+
+            <div class="container flex flex-wrap items-center justify-center">
+                <div class="w-full lg:w-1/2 p-2">
+                    <div class="text-mydark c-rich-text">
+                        {% component 'ceditor2' file="home/c1_a.htm" %}
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 p-2 h-halfrscreen shadow-inner">
+                    <video class="video_auto_play" controlsList="nodownload nofullscreen noremoteplayback" muted
+                        controls width="100%">
+
+                        <source
+                            src="https://res.cloudinary.com/charles-saint-olive/video/upload/c_scale,w_600/v1591888298/notilac/videos/produce.mp4"
+                            type="video/mp4">
+
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
+
+                </div>
+                <div class="hidden lg:block w-full lg:w-1/2 lg:mt-6 p-2" style="height:395px; width:600px">
+                    {% partial 'svgs/4pilliers' %}
+                </div>
+
+                <div class="w-full lg:w-1/2 p-2">
+                    <div class="text-mydark c-rich-text">
+                        <h3>Les 4 piliers de notre offre</h3>
+                        <ul>
+                            <li>
+                                <a href="/solution/absorptions" data-svg-link="absorbptions-2"
+                                    data-svg-group="pilliers_an" class="link_animation"><b>ABSORBPTIONS</b></a> des
+                                données
+                            </li>
+                            <li>
+                                <a href="/solution/enrichissements" data-svg-link="enrichissements-2"
+                                    data-svg-group="pilliers_an" class="link_animation"><b>ENRICHISSEMENT</b></a> des
+                                données
+                            </li>
+                            <li>
+                                <a href="/solution/productions" data-svg-link="productions-2"
+                                    data-svg-group="pilliers_an" class="link_animation"><b>PRODUCTIONS</b></a> de
+                                documents
+                                et d’outils sous
+                                de multiples formats (Word, email,
+                                mailto,
+                                PDF, portail web)
+                            </li>
+                            <li>
+                                <a href="/solution/diffusions" data-svg-link="diffusions-2" data-svg-group="pilliers_an"
+                                    class="link_animation"><b>DIFFUSIONS</b></a> des productions sur le Cloud, sur
+                                un site, par email, par API…
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:hidden block w-full lg:w-1/2 p-2 shadow-inner" style="height:315px; width:500px">
+                    {% partial 'svgs/4pilliers' %}
+                </div>
+                <div class="w-full lg:w-1/2 p-2">
+                    <div class="text-mydark c-rich-text">
+                        {% component 'ceditor1c' file="home/c1_c.htm" %}
+                    </div>
+                </div>
+
+                {% set before='assets/images/notilmoins-8.png' | theme %}
+                {% set after='assets/images/notilplus-8.png' | theme %}
+                <div class="hidden lg:block w-full lg:w-1/2 lg:mt-6 p-2 h-halfrscreen shadow-inner"
+                    style="height:395px; width:600px">
+                    {% partial 'carousel/before_after' after=after before=before id='one' %}
+                </div>
+            </div>
+    </section>
+
+</div>

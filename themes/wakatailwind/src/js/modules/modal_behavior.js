@@ -34,7 +34,7 @@ function toggleModal() {
     const modalContainer = modal.querySelector('.modal-container')
     modal.classList.toggle('opacity-0')
     modalContainer.classList.toggle('animated')
-    modalContainer.classList.toggle('fadeInUp')
+    modalContainer.classList.toggle('fadeInRight')
     modal.classList.toggle('pointer-events-none')
     body.classList.toggle('modal-active')
 }

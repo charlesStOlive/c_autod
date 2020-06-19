@@ -1,0 +1,27 @@
+{% for content in datas %}
+
+        {% if content._group == 'carousel_text' %}
+        {% partial 'carousel/carousel_text' data=content %}
+        {% endif %}
+
+        {% if content._group == 'carousel' %}
+        {% partial 'carousel/carousel' data=content %}
+        {% endif %}
+
+        {% if content._group == 'vimeo' %}
+        {% partial 'video/vimeo' data=content %}
+        {% endif %}
+
+        {% if content._group == 'cloudi_video' %}
+        {% partial 'video/cloudi' data=content %}
+        {% endif %}
+
+        {% if content._group == 'text_svg' %}
+        {% partial 'blocs/text_svg' data=content %}
+        {% endif %}
+
+        {% if content._group == 'partial' %}
+        {% partial 'partials/' ~ content.partial %}
+        {% endif %}
+
+{% endfor %}

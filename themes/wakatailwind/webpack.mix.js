@@ -24,8 +24,11 @@ mix.js('src/js/app.js', 'javascript/theme.js')
     .purgeCss({
         content: [
             rootPath('pages/*.htm'),
+            rootPath('pages/**/*.htm'),
             rootPath('layouts/*.htm'),
+            rootPath('layouts/**/*.htm'),
             rootPath('partials/**/*.htm'),
+            rootPath('partials/*.htm'),
             rootPath('src/**/*.js'),
             rootPath('src/*.js'),
             // rootPath('resources/**/*.jsx'),

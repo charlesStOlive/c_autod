@@ -9,17 +9,6 @@
 */
 
 /*!
- * Flickity v2.2.1
- * Touch, responsive, flickable carousels
- *
- * Licensed GPLv3 for open source use
- * or Flickity Commercial License for commercial use
- *
- * https://flickity.metafizzy.co
- * Copyright 2015-2019 Metafizzy
- */
-
-/*!
  * GSAP 3.2.6
  * https://greensock.com
  *
@@ -30,51 +19,16 @@
 */
 
 /*!
- * MotionPathPlugin 3.2.6
- * https://greensock.com
+ * ScrollMagic v2.0.7 (2019-05-07)
+ * The javascript library for magical scroll interactions.
+ * (c) 2019 Jan Paepke (@janpaepke)
+ * Project Website: http://scrollmagic.io
+ * 
+ * @version 2.0.7
+ * @license Dual licensed under MIT license and GPL.
+ * @author Jan Paepke - e-mail@janpaepke.de
  *
- * @license Copyright 2008-2020, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
-
-/*!
- * Unidragger v2.3.1
- * Draggable base class
- * MIT license
+ * @file ScrollMagic main library.
  */
-
-/*!
- * Unipointer v2.3.0
- * base class for doing one thing with pointer event
- * MIT license
- */
-
-/*!
- * getSize v2.0.3
- * measure size of elements
- * MIT license
- */
-
-/*!
- * matrix 3.2.6
- * https://greensock.com
- *
- * Copyright 2008-2020, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
-
-/*!
- * paths 3.2.6
- * https://greensock.com
- *
- * Copyright 2008-2020, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
 
 /*! jQuery v3.5.0 | (c) JS Foundation and other contributors | jquery.org/license */

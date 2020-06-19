@@ -3,6 +3,7 @@ var scrollpos = window.scrollY;
 var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 var btnMobile = document.getElementById("btn_mobile");
+console.log(header)
 
 
 var navaction = document.getElementById("navAction");
@@ -16,26 +17,34 @@ function changeMenuOnScroll() {
     $(window).resize(function () {
         mobile = window.matchMedia("(max-width: 1024px)").matches;
     }).resize();
-    changeAppparences(0);
+    if (header) {
+        changeAppparences(0);
+    }
+
 
     document.addEventListener('scroll', function () {
         /*Apply classes for slide in bar*/
         scrollpos = window.scrollY || document.documentElement.scrollTop;
-        console.log(scrollpos);
-        changeAppparences(scrollpos);
+        if (header) {
+            changeAppparences(scrollpos);
+        }
+
     });
 }
 
 function changeAppparences(scroll) {
     if (scrollpos > 10 || mobile) {
-        header.classList.add("bg-white");
-        navaction.classList.remove("bg-secondary");
-        navaction.classList.add("bg-primary");
+        header.classList.add("gradient");
+        //navaction.classList.remove("bg-secondary");
+        //navaction.classList.add("bg-primary");
+        //$('#logo').attr('src', './themes/wakatailwind/assets/images/logo@0.5x.png');
+        //$('#h_logo').removeClass("hidden");
+        //$('#h_logo_w').addClass("hidden");
         //Use to switch toggleColour colours
-        for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-gray-800");
-            toToggle[i].classList.remove("text-white");
-        }
+        // for (var i = 0; i < toToggle.length; i++) {
+        //     toToggle[i].classList.add("text-gray-800");
+        //     toToggle[i].classList.remove("text-white");
+        // }
         // for (var i = 0; i < logoToToggle.length; i++) {
         //     logoToToggle[i].classList.remove("fill-secondary");
         //     logoToToggle[i].classList.remove("stroke-secondary");
@@ -43,18 +52,21 @@ function changeAppparences(scroll) {
         //     logoToToggle[i].classList.add("stroke-primary");
         // }
         header.classList.add("shadow");
-        navcontent.classList.remove("bg-gray-100");
-        navcontent.classList.add("bg-white");
+        //navcontent.classList.remove("bg-gray-100");
+        //navcontent.classList.add("bg-white");
     }
     else {
-        header.classList.remove("bg-white");
-        navaction.classList.remove("bg-primary");
-        navaction.classList.add("bg-secondary");
+        header.classList.remove("gradient");
+        //navaction.classList.remove("bg-primary");
+        //navaction.classList.add("bg-secondary");
+        //$('#h_logo_w').removeClass("hidden");
+        //$('#h_logo').addClass("hidden");
+
         //
-        for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-white");
-            toToggle[i].classList.remove("text-gray-800");
-        }
+        // for (var i = 0; i < toToggle.length; i++) {
+        //     toToggle[i].classList.add("text-white");
+        //     toToggle[i].classList.remove("text-gray-800");
+        // }
         // for (var i = 0; i < logoToToggle.length; i++) {
         //     logoToToggle[i].classList.add("fill-secondary");
         //     logoToToggle[i].classList.add("stroke-secondary");
@@ -63,8 +75,8 @@ function changeAppparences(scroll) {
         // }
         //
         header.classList.remove("shadow");
-        navcontent.classList.remove("bg-white");
-        navcontent.classList.add("bg-gray-100");
+        //navcontent.classList.remove("bg-white");
+        //navcontent.classList.add("bg-gray-100");
 
     }
 }

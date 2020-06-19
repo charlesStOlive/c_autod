@@ -111,6 +111,7 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
+        return [];
         return [
             'crsm' => [
                 'label' => Lang::get('waka.crsm::lang.menu.projects_title'),

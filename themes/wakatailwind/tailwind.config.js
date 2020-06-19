@@ -2,9 +2,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#8E2532',
-        secondary: '#DB4E60',
-        mydark: '#20494F',
+        primary: '#002D93',
+        secondary: '#D70013',
+        mydark: '#00184E',
         success: 'green',
         warning: 'orange',
         error: 'red',
@@ -17,6 +17,11 @@ module.exports = {
         midscreen: '50vh',
         thirdscreen: '75vh',
       },
+      width: {
+        quarterscreen: '25vw',
+        midscreen: '50vw',
+        thirdscreen: '75vw',
+      },
       minWidth: {
         '100': '100px',
         '250': '200px',
@@ -28,10 +33,14 @@ module.exports = {
         '500': '500px',
       }
     },
+    fontFamily: {
+      'sans': ['Raleway', 'Arial', 'sans-serif']
+    },
     fill: theme => ({
       'primary': theme('colors.primary'),
       'secondary': theme('colors.secondary'),
       'mydark': theme('colors.mydark'),
+      'white': theme('colors.white'),
       'success': theme('colors.success'),
       'warning': theme('colors.warning'),
       'error': theme('colors.error'),
@@ -41,6 +50,7 @@ module.exports = {
       'primary': theme('colors.primary'),
       'secondary': theme('colors.secondary'),
       'mydark': theme('colors.mydark'),
+      'white': theme('colors.white'),
       'success': theme('colors.success'),
       'warning': theme('colors.warning'),
       'error': theme('colors.error'),
@@ -96,6 +106,7 @@ module.exports = {
         output: false, // this means there won't be a "heading" component in the CSS, but it can be extended
         fontWeight: theme('fontWeight.bold'),
         lineHeight: theme('lineHeight.tight'),
+        letterSpacing: theme('letterSpacing.wider'),
       },
       h1: {
         extends: 'heading', // this means all the styles in "heading" will be copied here; "extends" can also be an array to extend multiple text styles
@@ -128,7 +139,7 @@ module.exports = {
       },
       link: {
         fontWeight: theme('fontWeight.bold'),
-        color: '#DB4E60',
+        color: theme('colors.primary'),
         '&:hover': {
           color: theme('colors.primary'),
           textDecoration: 'underline',

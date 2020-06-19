@@ -1,13 +1,21 @@
+/* open-sans-regular - latin */
+
 @import "tailwindcss/base";
-//@import "../../node_modules/cloudinary-video-player/dist/cld-video-player.min.css";
+
+@font-face {
+  font-family: Oswald;
+  font-weight: 400;
+  src: url(/themes/wakatailwind/assets/fonts/Oswald-VariableFont_wght.ttf) format("truetype");
+}
 // PERSO
 //Double system de heading pour l'instant pas très utile...
-@import "heading.scss";
+//@import "heading.scss";
 @import "theme.scss";
-@import "bg_video.scss";
+@import "sub/carousel.scss";
+@import "sub/before-after.scss";
+
 //FIN DU PERSO
 
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
-

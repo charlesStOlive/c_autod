@@ -1,0 +1,19 @@
+.slider-item {
+    @apply absolute p-4 top-0 left-0 w-full h-full;
+  }
+  .slider-nav {
+    @apply  p-0 absolute m-2 left-0 right-0 text-center z-10;
+  }
+  .slider-nav-b {
+    @apply  p-0 absolute m-2 bottom-0 left-0 right-0 text-center z-10;
+  }
+  .slider-nav-t {
+    @apply  p-0 absolute m-2 top-0 bottom-0 left-0 right-0 text-center z-10;
+  }
+  .slider-nav-btn {
+    @apply inline bg-transparent text-white rounded
+  }
+  
+  .slider-nav-btn:hover {
+    @apply text-secondary;
+  }

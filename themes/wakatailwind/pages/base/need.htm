@@ -1,0 +1,85 @@
+title = "Besoin"
+url = "/need/:slug"
+layout = "default"
+==
+use Waka\Wcms\Models\Need;
+function onStart()
+{
+$need = Need::where('slug',$this->param('slug'))->first();
+$this['need'] = $need;
+}
+==
+{##}
+<!--Hero-->
+<div class="pt-24">
+
+    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <!--Left Col-->
+        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+            <p class="uppercase tracking-loose w-full">
+                {{need.catchline}}
+            </p>
+            <h1 class="c-h1 w-full pb-8">
+                {{need.name}}</h1>
+            <p class="c-h3 w-full">
+                {{need.intro}}
+            </p>
+
+        </div>
+        <!--Right Col-->
+        <div class="md:w-3/5 py-6 text-center">
+            <div class="w-full m-auto md:w-4/5 mb-10">
+                <img class="animated fadeInRight slower shadow-lg h-500 w-full object-cover"
+                    src="{{ need.main_image|getCloudiUrl(800,400, 'jpg', 'fill') }}">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="relative -mt-12 lg:-mt-24 -mb-1">
+    <img class="w-full h-24 lg:h-40 object-cover lg:object-fill" src="{{ 'assets/images/wave.png' | theme }}"
+        alt="separator">
+</div>
+
+
+
+<section class="bg-white relative text-mydark">
+    <div class="container max-w-5xl mx-auto px-2 py-4">
+        <h2 class="c-h2 w-full text-center">
+            Explications</h2>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto bg-secondary w-64 my-0 py-0"></div>
+        </div>
+        <div class="w-max-lg mb-4 mt-12 text-mydark c-rich-text">
+            {{ need.description_html  | raw  }}
+        </div>
+
+        {% partial 'distributions' datas=solution.content %}
+        
+
+        {% if need.solutions | length > O %}
+        <h3 class="c-h4 text-mydark">Les solutions utilisées pour ce genre de programmes :</h3>
+        <div class="w-full flex flex-col flex-wrap lg:flex-row justify-center mt-2 lg:justify-start">
+            {% for solution in need.solutions %}
+            {% if solution.state == 'ready' %}
+            <a href="/solution/{{ solution.slug }}" class="">
+                <div class="lg:mx-1 lg:w-56 h-16 btn-outline-solution text-sm  text-mydark">
+                    <img class="self-center p-1 h-12 w-12" src="{{ solution.main_image.thumb(100, 100) }}">
+                    <div class="self-center p-2 hover:text-white">{{ solution.name }}</div>
+                </div>
+            </a>
+            {% else %}
+            <div class="lg:mx-1 lg:w-56 h-16 btn-outline-solution-disabled text-sm text-gray-500">
+                <img class="self-center p-1 h-12 w-12" src="{{ solution.main_image.thumb(100, 100) }}">
+                <div class="self-center p-2">{{ solution.name }}</div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+</section>

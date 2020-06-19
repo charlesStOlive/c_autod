@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: waka.wcms::lang.service.name
+        searchable: true
+
+    state:
+        label: waka.utils::lang.global.state
+        
+    updated_at:
+        label: waka.utils::lang.global.updated_at
+        type: timetense

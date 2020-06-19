@@ -21,22 +21,22 @@ function checkMenu(e) {
         } else {
             // click both outside link and outside menu, hide menu
             navMenuDiv.classList.add("hidden");
-            navNeedDiv.classList.add("hidden");
+            //navNeedDiv.classList.add("hidden");
             navSolutionDiv.classList.add("hidden");
         }
     } else {
         if (checkParent(target, needMenu)) {
             if (navNeedDiv.classList.contains("hidden")) {
-                navNeedDiv.classList.remove("hidden");
+                //navNeedDiv.classList.remove("hidden");
                 navSolutionDiv.classList.add("hidden");
             } else {
-                navNeedDiv.classList.add("hidden");
+                //navNeedDiv.classList.add("hidden");
             }
         }
         if (checkParent(target, solutionMenu)) {
             if (navSolutionDiv.classList.contains("hidden")) {
                 navSolutionDiv.classList.remove("hidden");
-                navNeedDiv.classList.add("hidden");
+                //navNeedDiv.classList.add("hidden");
             } else {
                 navSolutionDiv.classList.add("hidden");
             }

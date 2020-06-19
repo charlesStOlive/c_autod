@@ -1,0 +1,15 @@
+<div class="py-4">
+    <p class="c-h3">{{data.title}}</p>
+</div>
+<div class="w-full">
+    <div class="slider relative overflow-hidden h-midscreen">
+        {% for elem in data.carousel %}
+        <div class="slider-item">
+            <div class="w-full h-full {{data.bg_carousel_class}}">
+                <p class="absolute p-4">{{ elem.text }}</p>
+                <img src="{{ elem.image | media }}" class="w-full h-full object-contain">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

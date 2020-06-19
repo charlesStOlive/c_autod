@@ -1,0 +1,115 @@
+description = "No header"
+
+[wakaForm]
+rules[email] = "required"
+rules[name] = "required"
+rules[subject] = "required"
+messages_success = "Votre formulaire a été envoyé avec succès"
+messages_errors = "Il y a eu des erreurs dans votre formulaire"
+messages_partial = "ajax/form"
+inline_errors = "disabled"
+sanitize_data = "htmlspecialchars"
+anonymize_ip = "disabled"
+recaptcha_enabled = 0
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "compact"
+
+[gestionKey]
+==
+{##}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Notilac - {{ this.page.title }}</title>
+	<meta name="description" content="{{ this.page.meta_description }}">
+	<meta name="title" content="{{ this.page.meta_title }}">
+	<meta name="author" content="OctoberCMS">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="generator" content="OctoberCMS">
+	<link rel="icon" type="image/png" href="{{ 'assets/images/favicon.png'|theme }}">
+	<link rel="stylesheet" property="stylesheet" href="{{ 'assets/css/theme.css'|theme }}">
+
+	{% styles %}
+</head>
+<!-- For IE <= 9 -->
+<!--[if IE]>
+<script type="text/javascript">
+    window.location = "/erreur?url={{ thisurl }}";
+</script>
+<![endif]-->
+
+<!-- For IE > 9 -->
+<!-- <script type="text/javascript">
+	if (window.navigator.msPointerEnabled) {
+        window.location = "/erreur?url={{ thisurl }}";
+    }
+</script> -->
+
+<body class="leading-normal tracking-normal">
+
+	<nav class="w-full ">
+
+		<div class="container mx-auto">
+			<a id="logo_menu" href="{{ 'home'|page }}">
+				<img id="h_logo" class="h-16" src="{{ 'assets/images/logo@0.5x.png' | theme }}">
+			</a>
+		</div>
+	</nav>
+
+
+	<section id="layout-content text-mydark">
+		{% page %}
+	</section>
+	<section class="w-full {% if color is null %} gradient  {% endif %} p-4"
+		style="{% if color %}background-color:{{color}}{% endif %}">
+		<div class=" container mx-auto flex flex-wrap text-white ">
+			<div class="w-full md:w-4/5">Cette page a été crée à partir de données de Charles. Elles ne sont disponible
+				que pour
+				la personne disposant du lien avec le code unique. Si vous souhaitez supprimer la page cliquez sur
+				"supprimer la page".</div>
+			<div class="w-full text-center md:w-1/5">{% component 'gestionKey' %}</div>
+
+	</section>
+
+
+	<!--Footer-->
+	<footer id="layout_footer" class="bg-white text-white">
+		{% partial 'site/footer' %}
+	</footer>
+
+
+	<!-- Modal de contact -->
+	<div
+		class="modal fixed opacity-0 pointer-events-none w-full h-full top-0 left-0 flex items-center justify-center z-50">
+		<div class="modal-overlay absolute bottom-0 left-0 w-full h-full bg-gray-900 opacity-50"></div>
+
+		<div class="modal-container text-white {% if color is null %} gradient  {% endif %} w-full h-full lg:h-midscreen absolute bottom-0 left-0 shadow-2xl overflow-y-auto"
+			style="{% if color %}background-color:{{color}}{% endif %}">
+			<!-- Add margin if you want to see some of the overlay behind the modal-->
+			<div class="relative modal-content py-4 text-left px-6">
+				<!--Title-->
+				<div class="absolute right-0 top-0 p-2 modal-close cursor-pointer z-50">
+					<svg class="{% if color is null %} fill-secondary {% else %} fill-white {% endif %} "
+						xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 18 18">
+						<path
+							d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+						</path>
+					</svg>
+				</div>
+				{% component 'wakaForm' %}
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts & Styles-->
+	<script src="{{ 'assets/javascript/theme.js'|theme }}"></script>
+
+	{% framework extras %}
+	{% scripts %}
+
+</body>
+
+</html>

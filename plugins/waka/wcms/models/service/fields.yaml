@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: waka.wcms::lang.service.name
+        span: auto
+    slug:
+        label: waka.utils::lang.global.slug
+        preset: name
+        span: auto
+    state:
+        label: waka.utils::lang.global.state
+        type: balloon-selector
+        options:
+            draft: Brouillon
+            noPage: Pas de page
+            ready: Prêt
+
+    main_image: 
+        label: waka.wcms::lang.service.main_image
+        type: cloudifileupload
+        mode: image
+        imageWidth: 150
+        imageHeight: 150
+
+    # description:
+    #     label: waka.wcms::lang.need.description
+    #     type: textarea
+
+    description_html:
+        label: waka.wcms::lang.need.description_html
+        type: richeditor
+
+    content:
+        label: waka.wcms::lang.need.content
+        prompt: Contenu
+        type: repeater
+        groups: $/waka/wcms/models/config/repeater_fields.yaml
+        
+        

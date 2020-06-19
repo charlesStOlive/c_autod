@@ -1,0 +1,9 @@
+v_normal
+visibility="{% if image | default(false)%}hidden{% else %}visible{%endif%}"
+
+v_client
+visibility="{% if image | default(false)%}visible{% else %}hidden{%endif%}"
+
+Rechercher / remplacer 
+#143D59 {{color_p|default('#143D59')}}
+#f4b41a {{color_s|default('#f4b41a')}}

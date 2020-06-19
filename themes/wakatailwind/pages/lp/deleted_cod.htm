@@ -1,0 +1,21 @@
+title = "Error page (500)"
+url = "/lp/deleted_cod"
+layout = "default"
+==
+{##}
+<div class="flex items-center justify-center h-screen">
+
+    <div class="bg-white text-mydark rounded-lg shadow-inner p-10">
+        <div class="text-center w-full p-8">
+            <h1 class="c-h3 pb-6">! Page supprimé</h1>
+            Vous pouvez prendre
+            contact pour créer une nouvelle page
+        </div>
+        <button class="modal-open w-full mx-auto lg:mx-0 btn btn-secondary my-4 z-10">Prendre
+            contact</button>
+        <button class="w-full mx-auto lg:mx-0 btn btn-secondary my-4 z-10"
+            onclick="location.href='{{ 'home'|page }}'">Acceuil
+            Notilac</button>
+    </div>
+
+</div>
