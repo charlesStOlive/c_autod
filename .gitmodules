@@ -10,9 +10,6 @@
 [submodule "plugins/waka/importexport"]
 	path = plugins/waka/importexport
 	url = https://github.com/charlesStOlive/oc-import-export.git
-[submodule "plugins/martin/forms"]
-	path = plugins/martin/forms
-	url = https://github.com/charlesStOlive/october-plugin-forms.git
 [submodule "plugins/waka/mailer"]
 	path = plugins/waka/mailer
 	url = https://github.com/charlesStOlive/oc-mailer.git
